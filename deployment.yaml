@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vote-api
+  namespace: git-pipeline-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vote-api
+  template:
+    metadata:
+      labels:
+        app: vote-api
+    spec:
+      containers:
+        - name: vote-api
+          image: image-registry.openshift-image-registry.svc:5000/git-pipeline-web/my-app:latest
+          ports:
+            - containerPort: 8080
