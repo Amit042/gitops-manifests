@@ -17,4 +17,4 @@ spec:
         - name: vote-api
           image: image-registry.openshift-image-registry.svc:5000/git-pipeline-web/my-app:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 9000
